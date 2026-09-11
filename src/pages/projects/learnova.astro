@@ -1,0 +1,46 @@
+---
+import CaseStudy from '../../components/CaseStudy.astro';
+import type { CaseStudyData } from '../../components/CaseStudy.astro';
+import { projects } from '../../data/projects';
+
+const learnovaProject = projects.find(p => p.id === 'learnova')!;
+
+const learnovaData: CaseStudyData = {
+  project: learnovaProject,
+  metaTitle: "Learnova | John Korede",
+  metaDescription: "A full-stack learning management platform with courses, assessments, analytics, and rule-based adaptive learning.",
+  ruleBasedNotice: "Learnova's adaptive learning functionality operates entirely on deterministic, rule-based algorithms based on score thresholds and diagnostic metrics. It does not utilize machine learning or AI models.",
+  context: "Standard learning management platforms frequently deliver identical, static course paths to all students regardless of individual diagnostic performance or subject mastery.",
+  solution: "Learnova explores how diagnostic assessments and quiz scores can automatically trigger rule-based course level placement and personalized module recommendations.",
+  myRole: "I engineered the full-stack platform, designing the MongoDB course and assessment schemas, Node.js/Express scoring APIs, and React interactive assessment dashboards.",
+  architecture: {
+    frontend: "React + Tailwind CSS",
+    backend: "Node.js + Express REST API",
+    database: "MongoDB",
+    services: "JWT Authentication"
+  },
+  technicalDecisions: [
+    { tech: "React", rationale: "Provided a responsive interactive UI for displaying quiz timers, dynamic diagnostic questions, and instant score feedback." },
+    { tech: "Node.js & Express", rationale: "Used to process diagnostic submissions, evaluate deterministic rule conditions, and update learner progress records." },
+    { tech: "MongoDB", rationale: "Flexible document model enabled structured embedding of course modules, quiz questions, answer choices, and student attempt logs." },
+    { tech: "Deterministic Adaptation Engine", rationale: "Built using explicit, transparent threshold evaluation rules (e.g. score >= 80% advances to advanced modules) ensuring predictable performance evaluation." }
+  ],
+  challenges: [
+    "Modelling course hierarchy structures (Courses → Modules → Lessons → Quizzes) cleanly within MongoDB.",
+    "Designing deterministic rules that handle edge cases when learners retake diagnostic tests or skip optional review modules.",
+    "Creating an accessible student analytics dashboard displaying course progress without causing unnecessary DOM re-renders."
+  ],
+  lessons: [
+    "Translating complex domain requirements into deterministic logic algorithms.",
+    "Designing clean data models for hierarchical educational content.",
+    "Building scalable authentication and authorization middleware for students and course creators."
+  ],
+  futureImprovements: [
+    "Instructor dashboard for configuring custom score threshold rules.",
+    "Exportable PDF performance summary certificates.",
+    "Interactive code execution environment for programming courses."
+  ]
+};
+---
+
+<CaseStudy data={learnovaData} />

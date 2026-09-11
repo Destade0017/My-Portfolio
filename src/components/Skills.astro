@@ -1,0 +1,60 @@
+---
+interface SkillCategory {
+  title: string;
+  skills: string[];
+}
+
+const skillCategories: SkillCategory[] = [
+  {
+    title: "Frontend",
+    skills: ["JavaScript", "HTML5", "CSS3", "React", "Tailwind CSS", "Vite"]
+  },
+  {
+    title: "Backend",
+    skills: ["Node.js", "Express", "REST APIs"]
+  },
+  {
+    title: "Databases",
+    skills: ["MongoDB", "PostgreSQL"]
+  },
+  {
+    title: "Tools & Deployment",
+    skills: ["Git", "GitHub", "Postman", "Vercel", "Render", "Netlify"]
+  },
+  {
+    title: "Other / Digital Tools",
+    skills: ["JWT", "Cloudinary", "Google Apps Script", "Google Workspace", "Canva", "CapCut"]
+  }
+];
+---
+
+<section id="skills" class="py-16 sm:py-24 border-b border-[var(--color-border)] space-y-12">
+  <div class="max-w-2xl space-y-3">
+    <div class="text-label text-[var(--color-accent-text)] font-mono tracking-widest">
+      TECHNICAL TOOLKIT
+    </div>
+    <h2 class="text-h1 font-bold text-[var(--color-text-primary)] tracking-tight">
+      Skills &amp; Technologies
+    </h2>
+    <p class="text-body text-[var(--color-text-secondary)] leading-relaxed">
+      A structured overview of the core technologies, frameworks, databases, and development tools I work with to build web applications.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {skillCategories.map(category => (
+      <div class="rounded-[var(--radius-md)] border border-[var(--color-border)] bg-[var(--color-surface)] p-6 space-y-4">
+        <h3 class="text-h3 font-bold text-[var(--color-text-primary)] border-b border-[var(--color-border)]/60 pb-3">
+          {category.title}
+        </h3>
+        <ul class="flex flex-wrap gap-2 text-meta text-[var(--color-text-secondary)] font-mono list-none p-0 m-0">
+          {category.skills.map(skill => (
+            <li class="rounded-[var(--radius-sm)] border border-[var(--color-border)] bg-[var(--color-background)] px-3 py-1.5 text-xs text-[var(--color-text-primary)]">
+              {skill}
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+</section>

@@ -1,0 +1,25 @@
+# John Korede — Software Developer
+
+John Korede is a Software Developer and Computer Science graduate from Caleb University (Second Class Upper Honors). He specializes in full-stack web application development, backend systems, and automated workflow tooling.
+
+## Primary Focus Areas
+- Full-Stack Web Development (React, Node.js, Express, MongoDB, Tailwind CSS)
+- Backend API Architecture & Authentication (REST APIs, JWT, Role-Based Access Control)
+- Workflow Automation (Google Apps Script, Google Workspace APIs, Google Sheets)
+
+## Key Projects
+- Rentra: Full-stack property management platform for property owners and tenants.
+- Learnova: Full-stack learning management platform featuring course workflows, assessments, and deterministic rule-based adaptive learning (non-AI/ML).
+- FinTrack: MERN personal finance tracking platform with transaction management and financial dashboards.
+- Property Management Automation: Workflow automation tool built with Google Apps Script and Google Sheets for recurring rent notifications.
+
+## Career & Experience
+- Peniel Apartments: Digital Support & Social Media Intern (Abuja, Nigeria) — Sept 2026 – Present
+- Ouranos Labs: Software Engineering Intern (Lagos, Nigeria) — June 2025 – Nov 2025 (Svelte, Tailwind CSS, Django, MongoDB)
+- GAO Tek Inc.: WordPress Developer Intern (Remote) — July 2025 – Sept 2025
+
+## Verified Contact & Profiles
+- Site: https://johnkorede.dev
+- GitHub: https://github.com/adesuyijohn
+- LinkedIn: https://linkedin.com/in/adesuyijohn
+- Email: destade45@gmail.com

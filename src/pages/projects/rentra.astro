@@ -1,0 +1,46 @@
+---
+import CaseStudy from '../../components/CaseStudy.astro';
+import type { CaseStudyData } from '../../components/CaseStudy.astro';
+import { projects } from '../../data/projects';
+
+const rentraProject = projects.find(p => p.id === 'rentra')!;
+
+const rentraData: CaseStudyData = {
+  project: rentraProject,
+  metaTitle: "Rentra | John Korede",
+  metaDescription: "A full-stack property management application built with React, Node.js, Express, MongoDB, and related technologies.",
+  context: "In traditional property management, communications, tenant tracking, and rent logging often rely on fragmented spreadsheets or manual messaging, leading to misplaced data and delayed records.",
+  solution: "Rentra addresses these workflow challenges by consolidating property listings, tenant dashboards, and rent tracking into a single responsive web portal with role-based permissions.",
+  myRole: "I developed the application as a full-stack project, implementing frontend components in React, backend REST API routes in Node.js/Express, MongoDB data models, and Cloudinary media uploads.",
+  architecture: {
+    frontend: "React + Tailwind CSS",
+    backend: "Node.js + Express REST API",
+    database: "MongoDB",
+    services: "JWT Auth + Cloudinary"
+  },
+  technicalDecisions: [
+    { tech: "React", rationale: "Chosen for component-driven UI development and predictable client state management across tenant and landlord dashboards." },
+    { tech: "Node.js & Express", rationale: "Used to build structured, modular REST API endpoints for user authentication, property CRUD operations, and tenant records." },
+    { tech: "MongoDB", rationale: "Selected for its document-oriented model, offering flexibility when storing property configurations, image metadata, and user profiles." },
+    { tech: "JWT (JSON Web Tokens)", rationale: "Implemented for stateless session authentication and role-based access control between property managers and tenants." },
+    { tech: "Cloudinary", rationale: "Utilized for managing and optimizing property image uploads and dynamic delivery." }
+  ],
+  challenges: [
+    "Enforcing strict role-based access control so tenants only view their active leases while property managers access multi-property administrative actions.",
+    "Designing MongoDB schemas to handle clean references between property entities, tenant users, and rental payment records.",
+    "Managing asynchronous image uploads to Cloudinary while maintaining fast form submission feedback in the React frontend."
+  ],
+  lessons: [
+    "Structuring clean RESTful endpoint hierarchies for multi-role user platforms.",
+    "Designing robust authentication flows with protected frontend client routes.",
+    "Balancing client state synchronization with server-side data persistence."
+  ],
+  futureImprovements: [
+    "Automated SMS and email tenant notifications for upcoming rent payments.",
+    "Expanded property analytics reporting for income tracking.",
+    "Tenant maintenance request ticketing system."
+  ]
+};
+---
+
+<CaseStudy data={rentraData} />
