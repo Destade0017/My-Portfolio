@@ -1,0 +1,334 @@
+---
+const CONTACT_EMAIL = "destade45@gmail.com";
+// Users can provide their own Web3Forms Access Key or use the public demo key
+const WEB3FORMS_ACCESS_KEY = "e6c0c282-3d74-4b5b-8d76-ef644e59f4f4";
+---
+
+<section id="contact" class="py-16 sm:py-24 space-y-12 border-b border-[var(--color-border)]">
+  <div class="max-w-2xl space-y-3">
+    <div class="text-label text-[var(--color-accent-text)] font-mono tracking-widest">
+      GET IN TOUCH
+    </div>
+    <h2 class="text-h1 font-bold text-[var(--color-text-primary)] tracking-tight">
+      Let's Connect &amp; Collaborate
+    </h2>
+    <p class="text-body text-[var(--color-text-secondary)] leading-relaxed">
+      Whether you have an engineering opportunity, a project idea, or just want to chat about backend systems and full-stack development, feel free to reach out.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+    <!-- Left Column: Quick Info & 1-Click Copy Email Card (5 cols) -->
+    <div class="lg:col-span-5 space-y-6">
+      <!-- Interactive Copy Email Card -->
+      <div class="rounded-[var(--radius-md)] border border-[var(--color-border)] bg-[var(--color-surface)] p-6 space-y-5 shadow-sm">
+        <div class="space-y-1.5">
+          <span class="text-label text-[var(--color-text-secondary)] font-mono">Direct Email</span>
+          <p class="font-mono text-base font-semibold text-[var(--color-text-primary)] break-all select-all">
+            {CONTACT_EMAIL}
+          </p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-2.5">
+          <!-- Copy to Clipboard Button -->
+          <button
+            id="copy-email-btn"
+            type="button"
+            data-email={CONTACT_EMAIL}
+            class="flex-1 inline-flex min-h-[44px] items-center justify-center gap-2 rounded-[var(--radius-sm)] border border-[var(--color-border)] bg-[var(--color-background)] px-4 text-small font-medium text-[var(--color-text-primary)] hover:border-[var(--color-accent)] hover:text-[var(--color-accent-text)] transition-all focus-visible:outline-none active:scale-[0.98]"
+            aria-label="Copy email address to clipboard"
+          >
+            <!-- Copy Icon -->
+            <svg id="copy-icon" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-[var(--color-accent-text)] transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+            </svg>
+            <!-- Checkmark Icon (Hidden by default) -->
+            <svg id="check-icon" xmlns="http://www.w3.org/2000/svg" class="hidden h-4 w-4 text-emerald-500 animate-in fade-in" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span id="copy-text">Copy Email</span>
+          </button>
+
+          <!-- Direct Mailto Link -->
+          <a
+            href={`mailto:${CONTACT_EMAIL}`}
+            class="inline-flex min-h-[44px] items-center justify-center gap-1.5 rounded-[var(--radius-sm)] border border-[var(--color-border)] bg-[var(--color-background)] px-3 text-small font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:border-[var(--color-text-secondary)] transition-colors focus-visible:outline-none"
+            aria-label="Open in email client"
+            title="Open mail application"
+          >
+            <span>Open Mail</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Live feedback toast banner -->
+        <div 
+          id="copy-toast" 
+          class="hidden text-xs font-mono text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1.5 rounded-[var(--radius-sm)] items-center gap-2"
+          role="status"
+          aria-live="polite"
+        >
+          <span>✓ Copied destade45@gmail.com to clipboard!</span>
+        </div>
+      </div>
+
+      <!-- Quick Availability & Work Details -->
+      <div class="rounded-[var(--radius-md)] border border-[var(--color-border)] bg-[var(--color-surface)] p-6 space-y-4">
+        <h3 class="text-small font-bold text-[var(--color-text-primary)] uppercase tracking-wider font-mono">
+          Availability Details
+        </h3>
+        
+        <ul class="space-y-3 text-small text-[var(--color-text-secondary)] list-none p-0 m-0">
+          <li class="flex items-center gap-3">
+            <span class="inline-block h-2 w-2 rounded-full bg-emerald-500 flex-shrink-0" aria-hidden="true"></span>
+            <span>Actively open to software engineering roles</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-[var(--color-accent-text)] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+            <span>Based in Abuja, Nigeria (Remote &amp; Relocation ready)</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-[var(--color-accent-text)] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <span>Fast response time (within 24 hours)</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Right Column: Interactive Working Contact Form (7 cols) -->
+    <div class="lg:col-span-7">
+      <div class="rounded-[var(--radius-md)] border border-[var(--color-border)] bg-[var(--color-surface)] p-6 sm:p-8 space-y-6 shadow-sm">
+        <div class="space-y-1">
+          <h3 class="text-h3 font-bold text-[var(--color-text-primary)]">
+            Send a Direct Message
+          </h3>
+          <p class="text-small text-[var(--color-text-secondary)]">
+            Fill out the form below and I will receive your message instantly.
+          </p>
+        </div>
+
+        <!-- Contact Form -->
+        <form id="contact-form" class="space-y-4">
+          <!-- Web3Forms Access Key & anti-bot honeypot -->
+          <input type="hidden" name="access_key" value={WEB3FORMS_ACCESS_KEY} />
+          <input type="checkbox" name="botcheck" class="hidden" style="display: none;" />
+          <input type="hidden" name="from_name" value="Portfolio Visitor" />
+          <input type="hidden" name="subject" value="New Portfolio Message from John Korede's Website" />
+
+          <!-- Name & Email Inputs Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="space-y-1.5">
+              <label for="contact-name" class="block text-xs font-mono font-medium text-[var(--color-text-primary)]">
+                Your Name <span class="text-rose-500">*</span>
+              </label>
+              <input
+                type="text"
+                id="contact-name"
+                name="name"
+                required
+                placeholder="e.g. Jane Doe"
+                class="w-full min-h-[44px] rounded-[var(--radius-sm)] border border-[var(--color-border)] bg-[var(--color-background)] px-3.5 py-2 text-small text-[var(--color-text-primary)] placeholder:text-[var(--color-text-secondary)]/60 focus:border-[var(--color-focus)] focus:outline-none transition-colors"
+              />
+            </div>
+
+            <div class="space-y-1.5">
+              <label for="contact-email" class="block text-xs font-mono font-medium text-[var(--color-text-primary)]">
+                Your Email <span class="text-rose-500">*</span>
+              </label>
+              <input
+                type="email"
+                id="contact-email"
+                name="email"
+                required
+                placeholder="jane@example.com"
+                class="w-full min-h-[44px] rounded-[var(--radius-sm)] border border-[var(--color-border)] bg-[var(--color-background)] px-3.5 py-2 text-small text-[var(--color-text-primary)] placeholder:text-[var(--color-text-secondary)]/60 focus:border-[var(--color-focus)] focus:outline-none transition-colors"
+              />
+            </div>
+          </div>
+
+          <!-- Subject / Inquiry Topic -->
+          <div class="space-y-1.5">
+            <label for="contact-topic" class="block text-xs font-mono font-medium text-[var(--color-text-primary)]">
+              Subject or Topic
+            </label>
+            <input
+              type="text"
+              id="contact-topic"
+              name="topic"
+              placeholder="e.g. Software Engineering Opportunity / Project Inquiry"
+              class="w-full min-h-[44px] rounded-[var(--radius-sm)] border border-[var(--color-border)] bg-[var(--color-background)] px-3.5 py-2 text-small text-[var(--color-text-primary)] placeholder:text-[var(--color-text-secondary)]/60 focus:border-[var(--color-focus)] focus:outline-none transition-colors"
+            />
+          </div>
+
+          <!-- Message Textarea -->
+          <div class="space-y-1.5">
+            <label for="contact-message" class="block text-xs font-mono font-medium text-[var(--color-text-primary)]">
+              Message <span class="text-rose-500">*</span>
+            </label>
+            <textarea
+              id="contact-message"
+              name="message"
+              required
+              rows="4"
+              placeholder="Hi John, I came across your portfolio and wanted to reach out regarding..."
+              class="w-full rounded-[var(--radius-sm)] border border-[var(--color-border)] bg-[var(--color-background)] px-3.5 py-2.5 text-small text-[var(--color-text-primary)] placeholder:text-[var(--color-text-secondary)]/60 focus:border-[var(--color-focus)] focus:outline-none transition-colors resize-y"
+            ></textarea>
+          </div>
+
+          <!-- Form Status Feedback Box -->
+          <div id="form-status" class="hidden p-3 rounded-[var(--radius-sm)] text-small font-medium" role="alert"></div>
+
+          <!-- Submit Button -->
+          <button
+            id="submit-btn"
+            type="submit"
+            class="w-full sm:w-auto inline-flex min-h-[48px] items-center justify-center gap-2 rounded-[var(--radius-sm)] bg-[var(--color-accent)] px-8 font-medium text-white hover:opacity-90 active:scale-[0.98] transition-all focus-visible:outline-none shadow-sm cursor-pointer"
+          >
+            <!-- Normal state icon -->
+            <svg id="submit-icon" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+            </svg>
+            <!-- Spinner icon (Hidden) -->
+            <svg id="submit-spinner" class="hidden h-4 w-4 animate-spin text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+            <span id="submit-text">Send Message</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // -------------------------------------------------------------
+    // 1. Interactive Copy Email to Clipboard Logic
+    // -------------------------------------------------------------
+    const copyBtn = document.getElementById('copy-email-btn');
+    const copyIcon = document.getElementById('copy-icon');
+    const checkIcon = document.getElementById('check-icon');
+    const copyText = document.getElementById('copy-text');
+    const copyToast = document.getElementById('copy-toast');
+
+    if (copyBtn && copyIcon && checkIcon && copyText) {
+      copyBtn.addEventListener('click', async () => {
+        const email = copyBtn.getAttribute('data-email') || 'destade45@gmail.com';
+        try {
+          if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(email);
+          } else {
+            // Fallback for non-https/older environments
+            const textArea = document.createElement('textarea');
+            textArea.value = email;
+            textArea.style.position = 'fixed';
+            textArea.style.left = '-999999px';
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            document.execCommand('copy');
+            textArea.remove();
+          }
+
+          // Visual feedback update
+          copyIcon.classList.add('hidden');
+          checkIcon.classList.remove('hidden');
+          copyText.textContent = 'Copied!';
+          copyBtn.classList.add('border-emerald-500', 'text-emerald-600', 'dark:text-emerald-400');
+          if (copyToast) {
+            copyToast.classList.remove('hidden');
+            copyToast.classList.add('flex');
+          }
+
+          // Reset button back after 2.5s
+          setTimeout(() => {
+            copyIcon.classList.remove('hidden');
+            checkIcon.classList.add('hidden');
+            copyText.textContent = 'Copy Email';
+            copyBtn.classList.remove('border-emerald-500', 'text-emerald-600', 'dark:text-emerald-400');
+            if (copyToast) {
+              copyToast.classList.add('hidden');
+              copyToast.classList.remove('flex');
+            }
+          }, 2500);
+        } catch (err) {
+          console.error('Failed to copy email:', err);
+          copyText.textContent = 'Press Ctrl+C to copy';
+        }
+      });
+    }
+
+    // -------------------------------------------------------------
+    // 2. Interactive Working Contact Form Submission Logic
+    // -------------------------------------------------------------
+    const form = document.getElementById('contact-form') as HTMLFormElement | null;
+    const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement | null;
+    const submitIcon = document.getElementById('submit-icon');
+    const submitSpinner = document.getElementById('submit-spinner');
+    const submitText = document.getElementById('submit-text');
+    const statusBox = document.getElementById('form-status');
+
+    if (form && submitBtn && submitIcon && submitSpinner && submitText && statusBox) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        // UI Loading state
+        submitBtn.disabled = true;
+        submitIcon.classList.add('hidden');
+        submitSpinner.classList.remove('hidden');
+        submitText.textContent = 'Sending...';
+        statusBox.className = 'hidden';
+
+        const formData = new FormData(form);
+
+        try {
+          const response = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body: formData,
+            headers: {
+              'Accept': 'application/json'
+            }
+          });
+
+          const result = await response.json();
+
+          if (response.status === 200 && result.success) {
+            // Success state
+            statusBox.textContent = "✓ Thank you! Your message was sent successfully. I'll get back to you shortly.";
+            statusBox.className = 'p-3 rounded-[var(--radius-sm)] text-small font-medium bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 block';
+            form.reset();
+          } else {
+            // Error handling with direct mailto fallback
+            const senderName = (formData.get('name') as string) || '';
+            const senderMsg = (formData.get('message') as string) || '';
+            const mailtoUrl = `mailto:destade45@gmail.com?subject=Portfolio%20Message%20from%20${encodeURIComponent(senderName)}&body=${encodeURIComponent(senderMsg)}`;
+            
+            statusBox.innerHTML = `Unable to send via form right now. <a href="${mailtoUrl}" class="underline font-bold text-[var(--color-accent-text)]">Click here to send directly via email ↗</a>`;
+            statusBox.className = 'p-3 rounded-[var(--radius-sm)] text-small font-medium bg-amber-500/10 border border-amber-500/20 text-amber-700 dark:text-amber-400 block';
+          }
+        } catch (error) {
+          const senderName = (formData.get('name') as string) || '';
+          const senderMsg = (formData.get('message') as string) || '';
+          const mailtoUrl = `mailto:destade45@gmail.com?subject=Portfolio%20Message%20from%20${encodeURIComponent(senderName)}&body=${encodeURIComponent(senderMsg)}`;
+
+          statusBox.innerHTML = `Network issue detected. <a href="${mailtoUrl}" class="underline font-bold text-[var(--color-accent-text)]">Click here to open email draft directly ↗</a>`;
+          statusBox.className = 'p-3 rounded-[var(--radius-sm)] text-small font-medium bg-amber-500/10 border border-amber-500/20 text-amber-700 dark:text-amber-400 block';
+        } finally {
+          // Reset button
+          submitBtn.disabled = false;
+          submitIcon.classList.remove('hidden');
+          submitSpinner.classList.add('hidden');
+          submitText.textContent = 'Send Message';
+        }
+      });
+    }
+  });
+</script>

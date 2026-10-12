@@ -5,6 +5,7 @@ import ProjectCard from '../components/ProjectCard.astro';
 import ExperienceItem from '../components/ExperienceItem.astro';
 import About from '../components/About.astro';
 import Skills from '../components/Skills.astro';
+import Contact from '../components/Contact.astro';
 import { projects } from '../data/projects';
 import { experiences } from '../data/experience';
 
@@ -101,4 +102,7 @@ const secondaryExperiences = experiences.filter(e => e.isSecondary);
 
   <!-- Skills & Technologies Section -->
   <Skills />
+
+  <!-- Contact & Connect Section -->
+  <Contact />
 </Layout>
