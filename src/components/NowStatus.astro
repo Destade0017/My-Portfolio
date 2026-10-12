@@ -1,0 +1,80 @@
+---
+// Live status and "Now" activity data
+const STATUS_DATA = {
+  availability: "Available for Software Engineering & Full-Stack roles",
+  currentRole: "Digital Support & Social Media Intern at Peniel Apartments",
+  building: "High-performance REST APIs & internal data reporting tools",
+  exploring: "System design, Docker containerization & Redis caching",
+  lastUpdated: "October 2026"
+};
+---
+
+<div class="rounded-[var(--radius-md)] border border-[var(--color-border)] bg-[var(--color-surface)] p-5 sm:p-6 shadow-xs my-8">
+  <!-- Header Bar: Pulsing indicator & Last updated -->
+  <div class="flex flex-wrap items-center justify-between gap-3 border-b border-[var(--color-border)]/60 pb-3.5 mb-4">
+    <div class="flex items-center gap-2.5">
+      <span class="relative flex h-3 w-3">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+      </span>
+      <span class="text-label text-[var(--color-text-primary)] font-bold tracking-wider font-mono">
+        LIVE STATUS &middot; WHAT I'M WORKING ON NOW
+      </span>
+    </div>
+
+    <span class="text-meta font-mono text-[var(--color-text-secondary)] text-xs">
+      Updated: {STATUS_DATA.lastUpdated}
+    </span>
+  </div>
+
+  <!-- Content Grid: 3 Column responsive cards -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <!-- Card 1: Availability -->
+    <div class="rounded-[var(--radius-sm)] border border-[var(--color-border)]/70 bg-[var(--color-background)] p-4 space-y-1.5">
+      <div class="flex items-center gap-2 text-xs font-mono text-[var(--color-accent-text)] uppercase font-semibold">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+        </svg>
+        <span>Status</span>
+      </div>
+      <p class="text-small text-[var(--color-text-primary)] font-medium leading-snug">
+        {STATUS_DATA.availability}
+      </p>
+      <p class="text-xs text-[var(--color-text-secondary)]">
+        Open to remote, hybrid, or on-site opportunities.
+      </p>
+    </div>
+
+    <!-- Card 2: Currently Building -->
+    <div class="rounded-[var(--radius-sm)] border border-[var(--color-border)]/70 bg-[var(--color-background)] p-4 space-y-1.5">
+      <div class="flex items-center gap-2 text-xs font-mono text-[var(--color-accent-text)] uppercase font-semibold">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+        </svg>
+        <span>Building</span>
+      </div>
+      <p class="text-small text-[var(--color-text-primary)] font-medium leading-snug">
+        {STATUS_DATA.building}
+      </p>
+      <p class="text-xs text-[var(--color-text-secondary)]">
+        Focusing on clean architecture and performant schemas.
+      </p>
+    </div>
+
+    <!-- Card 3: Deepening / Learning -->
+    <div class="rounded-[var(--radius-sm)] border border-[var(--color-border)]/70 bg-[var(--color-background)] p-4 space-y-1.5">
+      <div class="flex items-center gap-2 text-xs font-mono text-[var(--color-accent-text)] uppercase font-semibold">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+        </svg>
+        <span>Exploring</span>
+      </div>
+      <p class="text-small text-[var(--color-text-primary)] font-medium leading-snug">
+        {STATUS_DATA.exploring}
+      </p>
+      <p class="text-xs text-[var(--color-text-secondary)]">
+        Deepening distributed systems &amp; caching concepts.
+      </p>
+    </div>
+  </div>
+</div>
